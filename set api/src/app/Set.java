@@ -4,54 +4,28 @@ import app.Interfecaes.SetApiInterface;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Set<T> implements SetApiInterface {
+public class Set<T extends Comparable> {
+
+    T[] values;
+    boolean isInfinite = false;
 
     public Set() {
-    }
-    
-    public static void main(String[] args) {
+        values = (T[]) new Comparable[0];
     }
 
-    @Override
-    public int compareSets(int[] a, int[] b) {
-        if (a.length == 0) {
-            return b.length == 0 ? 0 : -1;
-        }
-        if (b.length == 0) {
-            return 1;
-        }
-
-        int result = 0;
-        int indexA = 0;
-        int indexB = 0;
-
-        while (indexA < a.length && indexB < b.length) {
-            if (a[indexA] == b[indexB]) {
-                indexA++;
-                indexB++;
-            } else if (a[indexA] > b[indexB]) {
-                if (result == 1) {
-                    return -2;
-                }
-                indexB++;
-                return -1; // a is subset
-            } else if(a[indexA] < b[indexB]) {
-                if (result == -1) {
-                    return -2;
-                }
-                indexA++;
-                result = 1; // a is superset
-            }
-        }
-        if (indexA == a.length && indexB == b.length) {
-            return result;
-        }
-        return -2; // sets
+    public Set(boolean isInfinite) {
+        this.isInfinite = isInfinite;
     }
 
-    @Override
-    public Set<Integer> union(int[] a, int[] b) {
-        
+    public Set(T[] values) {
+        this.values = values;
     }
 
+    public void setValues(T[] values) {
+        this.values = values;
+    }
+
+    public T[] getValues() {
+        return values;
+    }
 }
