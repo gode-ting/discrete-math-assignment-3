@@ -10,19 +10,34 @@ public class Set<T> implements SetApiInterface {
 
     public Set() {
     }
-
+    
     public static void main(String[] args) {
     }
 
     @Override
-    public Set<Integer> unionList(Set<Integer> a, Set<Integer> b) {
-        Union union = new Union();
-        
+    public Set<Integer> unionList(int[] a, int[] b) {
+
     }
-   
+
     @Override
-    public void addToList(int value) {
-        values.add(value);
+    public int compareSets(int[] a, int[] b) {
+        if (a.length == 0) {
+            return b.length == 0 ? 0 : -1;
+        }
+        if (b.length == 0) {
+            return 1;
+        }
+
+        int result = 0;
+        int indexA = 0;
+        int indexB = 0;
+
+        while (indexA < a.length && indexB < b.length) {
+            if (a[indexA] == b[indexB]) {
+                indexA++;
+                indexB++;
+            }
+        }
     }
 
 }

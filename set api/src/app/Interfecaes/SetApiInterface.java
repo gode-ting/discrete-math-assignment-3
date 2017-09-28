@@ -4,6 +4,7 @@ import app.Set;
 
 public interface SetApiInterface {
 
-    Set<Integer> unionList(Set<Integer> a, Set<Integer> b);
-    void addToList (int value);
+    Set<Integer> unionList(int[] a, int[] b);
+
+    int compareSets(int[] a, int[] b);
 }
