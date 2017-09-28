@@ -4,7 +4,6 @@ import app.Interfecaes.UnionInterface;
 
 public class Union implements UnionInterface{
 
-
     @Override
     public int[] noDuplicates(int[] a, int[] b) {
 

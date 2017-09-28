@@ -6,17 +6,10 @@ import java.util.List;
 
 public class Set<T> implements SetApiInterface {
 
-    private List values = new ArrayList();
-
     public Set() {
     }
     
     public static void main(String[] args) {
-    }
-
-    @Override
-    public Set<Integer> unionList(int[] a, int[] b) {
-
     }
 
     @Override
@@ -36,8 +29,29 @@ public class Set<T> implements SetApiInterface {
             if (a[indexA] == b[indexB]) {
                 indexA++;
                 indexB++;
+            } else if (a[indexA] > b[indexB]) {
+                if (result == 1) {
+                    return -2;
+                }
+                indexB++;
+                return -1; // a is subset
+            } else if(a[indexA] < b[indexB]) {
+                if (result == -1) {
+                    return -2;
+                }
+                indexA++;
+                result = 1; // a is superset
             }
         }
+        if (indexA == a.length && indexB == b.length) {
+            return result;
+        }
+        return -2; // sets
+    }
+
+    @Override
+    public Set<Integer> union(int[] a, int[] b) {
+        
     }
 
 }
