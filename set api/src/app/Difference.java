@@ -32,4 +32,20 @@ public class Difference {
 
         return new Set(newResult);
     }
+    
+      public static void main(String[] args) {
+        Integer[] listA = {1,2,3,4};
+        Integer[] listB = {3,4,5};
+        Set<Integer> o1 = new Set<>(true);
+        Set<Integer> o2 = new Set<>(listB);
+        
+        Set o3 = Difference.DifferenceInSet(o1, o2);
+        
+        System.out.println(o3.isInfinite);
+        
+        for (int i = 0; i < o3.getValues().length; i++) {
+            System.out.println(o3.getValues()[i] +",");
+        }
+        
+    }
 }
