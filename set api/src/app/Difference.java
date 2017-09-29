@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class Difference {
     
+   
+    
+    
     public static Set DifferenceInSet(Set a, Set b){
         if(a.isInfinite || a.isInfinite && b.isInfinite){
             return new Set(true);
