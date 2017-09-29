@@ -9,6 +9,8 @@ function unionArrays(a, b) {
 
 	let tempObj = {};
 
+	// Loop two arrays and insert to tempObj
+	// Overwrite index key if already there. 
 	for (let i = 0; i < aSize; i++) {
 		tempObj[a[i]] = a[i];
 		// console.log('a: ', tempObj);
@@ -17,16 +19,18 @@ function unionArrays(a, b) {
 		tempObj[b[i]] = b[i];
 		// console.log('b: ', tempObj);
 	}
-	console.log(tempObj);
+
 	let unionArray = [];
+
+	// Loop tempObj and insert each value to unionArray.
 	for (let value in tempObj) {
-		console.log('value: ', value);
+
 		if (tempObj.hasOwnProperty(value)) {
-			console.log('Pushed: ', tempObj[value]);
 			unionArray.push(tempObj[value]);
 		}
 	}
-	console.log(unionArray);
+
+	// Return union array
 	return unionArray;
 }
 
