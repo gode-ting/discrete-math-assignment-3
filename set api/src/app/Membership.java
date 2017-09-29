@@ -6,7 +6,15 @@ This isnt membership.
 
 */
 public class Membership {
-     
+     /*
+    a ∈A element of set membership	
+    
+    example:
+    A={3,9,14}, 3∈ A
+    
+    Simple - check if A contains 3. Return true or false;
+    
+    */
     
     public static void main(String[] args) {
         Integer[] listA = {1,2,3,4};
