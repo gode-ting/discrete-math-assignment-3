@@ -24,7 +24,7 @@ public class Membership {
         
         Membership.memberOf(3, o1);
       
-        System.out.println("is a element of " + Membership.memberOf(0, o1));
+        System.out.println("is a element of " + Membership.memberOf(3, o1));
         
        
     }

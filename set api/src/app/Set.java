@@ -8,7 +8,13 @@ public class Set<T extends Comparable> {
 
     T[] values;
     boolean isInfinite = false;
-
+    
+    public boolean isInfinite(Double d){
+       
+       return d == Double.POSITIVE_INFINITY;
+    }
+    
+    
     public Set() {
         values = (T[]) new Comparable[0];
     }

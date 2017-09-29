@@ -29,7 +29,7 @@ public class Intersection {
      if(a.isInfinite || a.isInfinite && b.isInfinite){
             return new Set(true);
         }
-        if(b.isInfinite || a.getValues().length <= b.getValues().length){
+        if(b.isInfinite){
             return new Set();
         }
         ArrayList<Comparable> result = new ArrayList();
@@ -37,7 +37,7 @@ public class Intersection {
         for (int i = 0; i < b.getValues().length; i++) {
           
             for (int j = 0; j <  a.getValues().length; j++) {
-                if (a.getValues()[j]== b.getValues()[i]) {
+                if (a.getValues()[j]== b.getValues()[i] && !result.contains(b.getValues()[i])) {
                     result.add(b.getValues()[i]);
                 }
             }
